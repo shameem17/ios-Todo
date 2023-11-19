@@ -74,10 +74,29 @@ extension ViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let label1 = UILabel(frame: CGRect(x: 20, y: 5, width: 100, height: 20))
+        let label1 = UILabel(frame: CGRect(x: 20, y: 5, width: 400, height: 20))
         label1.text = items[indexPath.row]
         cell.contentView.addSubview(label1)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Modify", message: "Delete Todo", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancle", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { [weak self] (_) in
+            let text = self?.items[indexPath.row]
+            DispatchQueue.main.async {
+                var currentItems = UserDefaults.standard.stringArray(forKey: "items") ?? []
+                currentItems.removeAll(where: { $0 == text })
+                UserDefaults.standard.setValue(currentItems, forKey: "items")
+                self?.items.removeAll(where: { $0 == text})
+                self?.table.reloadData()
+            }
+            
+        }))
+        
+        present(alert,animated: true)
     }
 }
 
