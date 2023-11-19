@@ -3,7 +3,7 @@
 
 ### using local file system
 
-no login register needed
+no login register needed. UserDefault was used to store data locally and permanantly. See the UserDefaults.md file for more details. 
 
 ---
 App Screen View
@@ -22,6 +22,7 @@ adding new todo
 
 --- 
 Delete todo from the list
+
 <img src="https://github.com/shameem17/ios-Todo/assets/53037559/87223d5e-d019-4fdb-8480-4374f4b6f759" data-canonical-src="https://github.com/shameem17/ios-Todo/assets/53037559/87223d5e-d019-4fdb-8480-4374f4b6f759" width="350" height="550" />
 
 
