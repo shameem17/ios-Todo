@@ -3,7 +3,9 @@
 
 ### using local file system
 
-no login register needed. UserDefault was used to store data locally and permanantly. See the UserDefaults.md file for more details. 
+no login register needed. UserDefault was used to store data locally and permanently. See the UserDefaults.md file for more details. 
+
+Read about UserDefaults [here](https://github.com/shameem17/ios-Todo/blob/master/UserDefaults.md).
 
 ---
 App Screen View
